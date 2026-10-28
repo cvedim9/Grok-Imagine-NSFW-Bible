@@ -7,6 +7,12 @@
   "modePrefix": "Spicy mode",
   "bibleVersion": "Bible v4.4",
   "footerDate": "Sep 02, 2026",
+  "editionNav": [
+    { "id": "flux", "label": "Flux", "href": "index.html" },
+    { "id": "ltx", "label": "LTX", "href": "index-ltx.html" },
+    { "id": "nsfw", "label": "NSFW", "href": "index-nsfw.html" },
+    { "id": "r-rated", "label": "R-Rated", "href": "index-r.html" }
+  ],
   "alternateEdition": { "label": "R-Rated Edition (default)", "href": "index.html" },
   "subjectPlaceholder": "Describe scene... (e.g. legs high missionary, deep rhythmic pulsing union)",
   "sequencePlaceholder": "Describe the core scene context (e.g. 'candlelit bedroom, legs high missionary position, intense eye contact'). This will be used as the anchor for all phases.",

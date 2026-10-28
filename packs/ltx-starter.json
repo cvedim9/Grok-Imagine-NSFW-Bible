@@ -1,0 +1,458 @@
+{
+  "id": "ltx-starter",
+  "edition": "ltx",
+  "label": "LTX starter",
+  "styles": [
+    {
+      "id": "live-action",
+      "label": "Live action",
+      "prompt": "The image looks like a cinematic live-action shot."
+    },
+    {
+      "id": "anime-film",
+      "label": "Anime film",
+      "prompt": "The image looks like a detailed anime film frame in motion."
+    },
+    {
+      "id": "painterly-motion",
+      "label": "Painterly",
+      "prompt": "The image looks like a moving oil painting."
+    },
+    {
+      "id": "neon-noir",
+      "label": "Neon noir",
+      "prompt": "The image looks like a neon-noir film frame."
+    },
+    {
+      "id": "natural-light",
+      "label": "Available light",
+      "prompt": "The image looks like available-light documentary footage."
+    }
+  ],
+  "boosters": [
+    {
+      "id": "slow-motion",
+      "label": "Slow motion",
+      "prompt": "The motion is smooth and slightly slowed."
+    },
+    {
+      "id": "handheld",
+      "label": "Handheld",
+      "prompt": "The camera has a light handheld drift."
+    },
+    {
+      "id": "anamorphic",
+      "label": "Anamorphic flare",
+      "prompt": "Highlights flare the way an anamorphic lens does."
+    },
+    {
+      "id": "shallow-focus",
+      "label": "Shallow focus",
+      "prompt": "Focus stays shallow on the subject."
+    },
+    {
+      "id": "practicals",
+      "label": "Practicals",
+      "prompt": "Practical lights in the room are visible and motivated."
+    }
+  ],
+  "characters": [
+    {
+      "id": "mara",
+      "name": "Mara Voss",
+      "face": "oval face, faint freckles across the nose, grey-green eyes, straight brows",
+      "body": "adult woman in her thirties, tall and athletic",
+      "hair": "dark auburn hair in shoulder-length loose waves",
+      "wardrobe": "an open black silk robe",
+      "setting": "a bedroom with rumpled ivory sheets and one lit candle",
+      "lighting": "warm candlelight from camera left and deep shadow on the far wall"
+    },
+    {
+      "id": "ivo",
+      "name": "Ivo Hale",
+      "face": "long face, crow's feet, dark eyes, a break in one eyebrow",
+      "body": "adult man in his early forties, broad-shouldered and lean",
+      "hair": "short dark hair with silver at the temples",
+      "wardrobe": "an unbuttoned linen shirt and dark trousers",
+      "setting": "a night studio with a concrete floor and a tall north window",
+      "lighting": "cool window light from camera right and a small warm practical on the floor"
+    },
+    {
+      "id": "sera",
+      "name": "Sera Quinn",
+      "face": "heart-shaped face, dark brown eyes, a small scar through the left eyebrow",
+      "body": "adult woman in her late twenties, compact and strong",
+      "hair": "cropped black hair, slightly longer on top",
+      "wardrobe": "a black leather harness over bare skin",
+      "setting": "a high apartment with wet glass and a neon sign outside",
+      "lighting": "magenta and cyan practical light, with the rest of the room falling dark"
+    },
+    {
+      "id": "lenn",
+      "name": "Lenn Aelis",
+      "face": "narrow face, gold-flecked eyes, faint leaf-shaped marks at the temples",
+      "body": "an adult elf woman, long-limbed",
+      "hair": "long straight silver hair",
+      "wardrobe": "a forest-green drape knotted at one hip",
+      "setting": "a moonlit forest clearing with a low fire",
+      "lighting": "cool moonlight from above and a warm rim from the fire"
+    }
+  ],
+  "prompts": [
+    {
+      "number": 1,
+      "name": "Candle and shoulder",
+      "type": "video",
+      "summary": "Mara turns to look back over her shoulder.",
+      "prompt": "Mara turns to look back over her shoulder.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "shallow-focus",
+          "practicals"
+        ],
+        "subject": "She sits on the edge of the bed, then turns her head to look back over her shoulder.",
+        "camera": "The camera holds a medium shot and slowly pushes in toward her shoulder.",
+        "audio": "quiet room tone, a sheet shifting, one soft breath"
+      }
+    },
+    {
+      "number": 2,
+      "name": "Rain on the glass",
+      "type": "video",
+      "summary": "Mara rests her forehead on rainy glass.",
+      "prompt": "Mara rests her forehead on rainy glass.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "slow-motion"
+        ],
+        "subject": "She walks to the tall window, lifts one hand to the glass, and rests her forehead against it as rain runs down.",
+        "camera": "The camera drifts in from her side and stops on a three-quarter view.",
+        "audio": "rain on glass, a low room tone, cloth moving"
+      }
+    },
+    {
+      "number": 3,
+      "name": "Morning stretch",
+      "type": "video",
+      "summary": "Mara stretches across the sheets.",
+      "prompt": "Mara stretches across the sheets.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "natural-light",
+        "boosters": [
+          "slow-motion",
+          "shallow-focus"
+        ],
+        "subject": "She stretches forward across the sheets, then settles with her chin on her folded arms as the robe slips to her waist.",
+        "camera": "The camera travels low along the bed and eases to a stop on her face.",
+        "audio": "sheets moving, a slow breath, distant morning quiet"
+      }
+    },
+    {
+      "number": 4,
+      "name": "North-light studio",
+      "type": "video",
+      "summary": "Ivo shifts his weight and looks past the lens.",
+      "prompt": "Ivo shifts his weight and looks past the lens.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "shallow-focus"
+        ],
+        "subject": "He shifts his weight onto one hip, lets the shirt fall open, and looks just past the lens.",
+        "camera": "The camera holds a full-length frame and makes a slow lateral move.",
+        "audio": "a quiet studio, a footstep, cloth"
+      }
+    },
+    {
+      "number": 5,
+      "name": "Midnight kitchen",
+      "type": "video",
+      "summary": "Ivo leans on the counter in the dark.",
+      "prompt": "Ivo leans on the counter in the dark.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "natural-light",
+        "boosters": [
+          "practicals",
+          "handheld"
+        ],
+        "subject": "He sets a glass on the counter, leans his hip into it, and looks down into the dark room.",
+        "camera": "The camera watches from across the counter with a light handheld drift.",
+        "audio": "a glass on stone, the fridge hum, a quiet breath"
+      }
+    },
+    {
+      "number": 6,
+      "name": "Neon doorway",
+      "type": "video",
+      "summary": "Sera steps into the doorway under neon.",
+      "prompt": "Sera steps into the doorway under neon.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "neon-noir",
+        "boosters": [
+          "anamorphic",
+          "practicals"
+        ],
+        "subject": "She steps into the doorway, sets one hand on the frame, and turns her shoulder into the colored light.",
+        "camera": "The camera rises slightly and pushes from a full shot toward her torso.",
+        "audio": "a distant sign buzz, city wash, leather creaking"
+      }
+    },
+    {
+      "number": 7,
+      "name": "Mirror and oil",
+      "type": "video",
+      "summary": "Sera works oil across her collarbone in the mirror.",
+      "prompt": "Sera works oil across her collarbone in the mirror.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "shallow-focus",
+          "practicals"
+        ],
+        "subject": "She faces the mirror, pours oil into one palm, and works it slowly across her collarbone while watching her reflection.",
+        "camera": "The camera stays over her shoulder so both her back and the reflection stay in frame.",
+        "audio": "oil on skin, a soft room tone, her breath"
+      }
+    },
+    {
+      "number": 8,
+      "name": "Reclining study",
+      "type": "video",
+      "summary": "Mara settles back on the sofa and looks toward the easel.",
+      "prompt": "Mara settles back on the sofa and looks toward the easel.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "painterly-motion",
+        "boosters": [
+          "slow-motion"
+        ],
+        "subject": "She lowers herself onto the dark sofa, raises one knee, and turns her face toward the easel.",
+        "camera": "The camera holds still, like a study, with only a slight drift closer.",
+        "audio": "brush bristles, a quiet room, cloth on upholstery"
+      }
+    },
+    {
+      "number": 9,
+      "name": "Balcony wind",
+      "type": "video",
+      "summary": "Sera steps onto the balcony and the wind takes her robe.",
+      "prompt": "Sera steps onto the balcony and the wind takes her robe.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "anamorphic",
+          "handheld"
+        ],
+        "subject": "She steps from the room onto the balcony, and the wind lifts the edge of her robe as she looks out over the city.",
+        "camera": "The camera follows from inside the room and stops in the doorway.",
+        "audio": "wind, distant traffic, fabric snapping softly"
+      }
+    },
+    {
+      "number": 10,
+      "name": "Library lamp",
+      "type": "video",
+      "summary": "Ivo closes the book and sits back under the lamp.",
+      "prompt": "Ivo closes the book and sits back under the lamp.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "practicals",
+          "shallow-focus"
+        ],
+        "subject": "He closes the book, sets it on the arm of the chair, and tips his head back into the green light.",
+        "camera": "The camera pushes from a medium shot into a closer view of his face.",
+        "audio": "a page closing, the lamp's faint hum, a slow breath"
+      }
+    },
+    {
+      "number": 11,
+      "name": "Tent lantern",
+      "type": "video",
+      "summary": "Mara turns toward the lantern inside the tent.",
+      "prompt": "Mara turns toward the lantern inside the tent.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "natural-light",
+        "boosters": [
+          "practicals",
+          "handheld"
+        ],
+        "subject": "She kneels in the small tent, turns toward the lantern, and lets the robe slip off one shoulder.",
+        "camera": "The camera is already inside the tent and drifts closer with a little handheld movement.",
+        "audio": "canvas moving in the wind, the lantern ticking, a soft breath"
+      }
+    },
+    {
+      "number": 12,
+      "name": "Last light on the shore",
+      "type": "video",
+      "summary": "Sera walks out of the surf and looks back.",
+      "prompt": "Sera walks out of the surf and looks back.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "slow-motion",
+          "anamorphic"
+        ],
+        "subject": "She walks out of the surf, water dropping from her thighs, and looks back toward the horizon.",
+        "camera": "The camera tracks beside her at a distance, then lets her pull slightly ahead.",
+        "audio": "surf, wet sand, wind"
+      }
+    },
+    {
+      "number": 13,
+      "name": "Clearing fire",
+      "type": "video",
+      "summary": "Lenn extends a hand over the low fire.",
+      "prompt": "Lenn extends a hand over the low fire.",
+      "character_id": "lenn",
+      "builder": {
+        "style_id": "painterly-motion",
+        "boosters": [
+          "practicals",
+          "slow-motion"
+        ],
+        "subject": "She steps into the clearing, extends one hand over the low fire, and the drape shifts as the heat rises.",
+        "camera": "The camera circles a short way from a wide view toward her profile.",
+        "audio": "fire crackle, night insects, cloth moving"
+      }
+    },
+    {
+      "number": 14,
+      "name": "Throat and candle",
+      "type": "video",
+      "summary": "Mara tips her head as her partner's mouth meets her throat.",
+      "prompt": "Mara tips her head as her partner's mouth meets her throat.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "shallow-focus",
+          "practicals"
+        ],
+        "subject": "She tips her head, and her adult partner leans in until his mouth rests at her throat.",
+        "camera": "The camera pushes into a close view and holds on their faces.",
+        "audio": "a candle hiss, close breathing, almost no room tone"
+      }
+    },
+    {
+      "number": 15,
+      "name": "Foreheads together",
+      "type": "video",
+      "summary": "Mara settles into her partner's lap until their foreheads touch.",
+      "prompt": "Mara settles into her partner's lap until their foreheads touch.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "anime-film",
+        "boosters": [
+          "slow-motion"
+        ],
+        "subject": "She lowers herself into her adult partner's lap, folds her knees around his hips, and rests her forehead against his.",
+        "camera": "The camera holds a centered medium shot and drifts a little closer.",
+        "audio": "cloth, two quiet breaths, a still room"
+      }
+    },
+    {
+      "number": 16,
+      "name": "After the bath",
+      "type": "video",
+      "summary": "Sera dries her hair by the window, towel low.",
+      "prompt": "Sera dries her hair by the window, towel low.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "natural-light",
+        "boosters": [
+          "shallow-focus"
+        ],
+        "subject": "She stands by the window, towel gathered low on her hips, and lifts one hand to dry her hair.",
+        "camera": "The camera slides from her side to a three-quarter view in the window light.",
+        "audio": "water dripping, a towel, soft daylight room tone"
+      }
+    },
+    {
+      "number": 17,
+      "name": "Alley sign",
+      "type": "video",
+      "summary": "Sera stops under the sign and lights a cigarette.",
+      "prompt": "Sera stops under the sign and lights a cigarette.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "neon-noir",
+        "boosters": [
+          "anamorphic",
+          "handheld"
+        ],
+        "subject": "She stops under the flickering sign, cups a lighter, and draws on the cigarette as rain hits the pavement.",
+        "camera": "The camera approaches on foot and settles at a medium distance.",
+        "audio": "rain, a lighter, the sign buzzing, a distant car"
+      }
+    },
+    {
+      "number": 18,
+      "name": "Sheets and side light",
+      "type": "video",
+      "summary": "Ivo turns his head on the pillow toward someone offscreen.",
+      "prompt": "Ivo turns his head on the pillow toward someone offscreen.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "live-action",
+        "boosters": [
+          "slow-motion",
+          "shallow-focus"
+        ],
+        "subject": "He lies back on the white sheets, lifts one arm over his head, and turns his face toward someone just outside the frame.",
+        "camera": "The camera looks down from a three-quarter angle and slowly lowers.",
+        "audio": "sheets, a slow breath, a quiet room"
+      }
+    },
+    {
+      "number": 19,
+      "name": "Hands around a cup",
+      "type": "video",
+      "summary": "Ivo warms both hands around a cup.",
+      "prompt": "Ivo warms both hands around a cup.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "natural-light",
+        "boosters": [
+          "shallow-focus",
+          "practicals"
+        ],
+        "subject": "He sits on the stool, wraps both hands around the cup, and lowers his eyes.",
+        "camera": "The camera moves from his hands up to his face and holds.",
+        "audio": "ceramic on wood, a quiet breath"
+      }
+    },
+    {
+      "number": 20,
+      "name": "Cushions",
+      "type": "video",
+      "summary": "Lenn reclines and looks up at her partner.",
+      "prompt": "Lenn reclines and looks up at her partner.",
+      "character_id": "lenn",
+      "builder": {
+        "style_id": "anime-film",
+        "boosters": [
+          "slow-motion",
+          "shallow-focus"
+        ],
+        "subject": "She sinks back into the dark cushions, lifts one arm over her head, and looks up as her adult partner steps closer.",
+        "camera": "The camera starts above her and eases down toward her face.",
+        "audio": "cushions shifting, a fire somewhere offscreen, a soft breath"
+      }
+    }
+  ]
+}

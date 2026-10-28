@@ -11,16 +11,19 @@ The prompt builder is a static React app (no build step). Serve the repo over HT
 
 | File | Edition |
 |------|---------|
-| [index.html](index.html) | Full NSFW Bible (237 templates) — default entry |
-| [index-nsfw.html](index-nsfw.html) | Redirect alias → `index.html` |
-| [index-r.html](index-r.html) | R-Rated cinematic mature edition (102 templates) |
+| [index.html](index.html) | Flux image edition — default entry |
+| [index-flux.html](index-flux.html) | Same Flux edition |
+| [index-ltx.html](index-ltx.html) | LTX video edition |
+| [index-nsfw.html](index-nsfw.html) | Original NSFW Bible (231 public templates) |
+| [index-r.html](index-r.html) | Original R-rated edition (102 templates) |
 | [app.js](app.js) | App shell and tab routing |
-| [config/nsfw.json](config/nsfw.json), [config/r-rated.json](config/r-rated.json) | Edition metadata (single source of truth) |
-| [edition.js](edition.js), [prompt-engine.js](prompt-engine.js), [ui-shared.js](ui-shared.js), [ui-*-tab.js](ui-builder-tab.js) | Edition presets, prompt engine, UI tabs |
+| [config/flux.json](config/flux.json), [config/ltx.json](config/ltx.json), [config/nsfw.json](config/nsfw.json), [config/r-rated.json](config/r-rated.json) | Edition metadata |
+| [edition.js](edition.js), [edition-local.js](edition-local.js), [prompt-engine.js](prompt-engine.js) | Presets and model-aware prompt composition |
+| [packs/](packs/manifest.json) | Flux and LTX starter packs, plus the manifest for your own packs |
 | [master-pack-full.json](master-pack-full.json) | NSFW template data |
 | [master-pack-r-rated.json](master-pack-r-rated.json) | R-rated template data |
 
-**Local preview:** `python3 -m http.server 8000` then open `http://localhost:8000/index.html` or `index-r.html`.
+**Local preview:** `python3 -m http.server 8000` then open `http://localhost:8000/index.html` (Flux), `index-ltx.html`, `index-nsfw.html`, or `index-r.html`.
 
 **Smoke test:** `./scripts/smoke_test.sh` (local) or `./scripts/smoke_test.sh https://finecomputer14451.github.io/Grok-Imagine-NSFW-Bible`
 
@@ -30,6 +33,25 @@ The prompt builder is a static React app (no build step). Serve the repo over HT
 - R-Rated (after editing the full pack): `python3 scripts/build_r_rated_pack.py`
 
 **Agent instructions:** See [AGENTS.md](AGENTS.md) for Grok Build / CI conventions.
+
+## Flux and LTX editions
+
+The default page is a prompt architect for local checkpoints, not for Grok. Flux writes a still as sentences: who the person is, what they are doing, the setting, the camera, the light, then the medium. LTX writes one continuous shot in the present tense, in time order, with an optional audio line for LTX-2. Sampling values (steps, CFG, guidance, seed, resolution, LoRAs) copy as a separate settings block.
+
+The header on every edition switches between Flux, LTX, NSFW, and R-rated. The original Grok editions are unchanged and still load their own packs. Flux and LTX do not carry over the Grok dodge layer, the "Spicy mode:" tag, or the off-peak notes.
+
+A character sheet (face, body, hair, wardrobe, setting, lighting) is inserted verbatim so the same person can recur across stills and across LTX clips. The Sequence tab turns that into four prompts: a still series for Flux, a shot list for LTX.
+
+How the wording was chosen is written up in [docs/prompting-flux-ltx.md](docs/prompting-flux-ltx.md), with the Black Forest Labs and Lightricks pages it follows.
+
+### Adding a pack
+
+1. Copy [packs/my-pack.example.json](packs/my-pack.example.json) to a new file under `packs/`.
+2. Fill in `styles`, `characters`, and `prompts`. The field list is [docs/pack-schema.md](docs/pack-schema.md) and [packs/schema.json](packs/schema.json).
+3. Add a line to [packs/manifest.json](packs/manifest.json) with `"enabled": true` and `"edition": "flux"` or `"ltx"`.
+4. Reload. The Packs tab can turn a listed file on or off. The starter sets are [packs/flux-starter.json](packs/flux-starter.json) and [packs/ltx-starter.json](packs/ltx-starter.json).
+
+All characters in those packs are fictional adults. Do not add a real person's likeness.
 
 **Disclaimer**  
 This is a **community-curated, unofficial guide** (inspired from the "Ultimate Ethical NSFW Prompting Guide" series on r/Grok_Porn, [Feb 2026 update](https://www.reddit.com/r/Grok_Porn/comments/1qt18w3/guide_my_ultimate_ethical_nsfw_prompting_guide/)), X discussions, and power-user experimentation following the Grok Imagine 1.0 global release (February 2, 2026).  

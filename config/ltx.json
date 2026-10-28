@@ -1,0 +1,44 @@
+{
+  "edition": "ltx",
+  "composer": "ltx",
+  "manifestUrl": "packs/manifest.json",
+  "title": "Prompt Architect — LTX",
+  "versionLabel": "LTX-Video / LTX-2 · ComfyUI",
+  "footerDate": "Oct 28, 2026",
+  "footerNote": "Fictional adults only · not affiliated with Lightricks",
+  "contentNote": "All characters are fictional adults. No real people's likenesses.",
+  "bibleVersion": "LTX",
+  "modeLabel": "",
+  "modePrefix": "",
+  "subjectPlaceholder": "The action in present tense, in the order it happens. Example: She sits on the edge of the bed, then turns her head to look back over her shoulder.",
+  "cameraPlaceholder": "How the camera moves relative to the subject. Example: The camera holds a medium shot and slowly pushes in toward her shoulder.",
+  "audioPlaceholder": "room tone, a sheet shifting, one soft breath",
+  "sequencePlaceholder": "The action shared by every clip. Each shot is one continuous take with the character sheet repeated.",
+  "editionNav": [
+    { "id": "flux", "label": "Flux", "href": "index.html" },
+    { "id": "ltx", "label": "LTX", "href": "index-ltx.html" },
+    { "id": "nsfw", "label": "NSFW", "href": "index-nsfw.html" },
+    { "id": "r-rated", "label": "R-Rated", "href": "index-r.html" }
+  ],
+  "sequenceNotes": [
+    { "title": "One take per clip", "text": "Each phase is its own prompt: one continuous shot, present tense, in time order." },
+    { "title": "Continuity", "text": "The same identity, setting, and lighting lines are inserted into every clip." },
+    { "title": "Length", "text": "Match how much you describe to the frame count. A short line will not fill a 10 second clip." },
+    { "title": "Audio", "text": "Turn on the audio line for LTX-2. It stays in the same paragraph." }
+  ],
+  "principles": [
+    { "title": "One shot", "text": "Describe a single continuous take. Present tense, in the order things happen." },
+    { "title": "Order", "text": "Appearance, then action, camera movement, environment, lighting, and an optional audio line." },
+    { "title": "Camera", "text": "Say how the camera moves relative to the subject, not a shot list of cuts." },
+    { "title": "Length", "text": "121 frames at 24 fps is about 5 seconds. Frame count must be 8×n+1." },
+    { "title": "People", "text": "Fictional adults only. Do not describe a real person's likeness." }
+  ],
+  "sources": [
+    { "title": "LTX prompting guide", "url": "https://docs.ltx.io/api-documentation/implementation-guides/prompting-guide.md" },
+    { "title": "LTX-2 prompting guide", "url": "https://ltx.io/blog/prompting-guide-for-ltx-2" },
+    { "title": "LTX-2 in ComfyUI", "url": "https://docs.comfy.org/tutorials/video/ltx/ltx-2" },
+    { "title": "LTX-2 model repository", "url": "https://github.com/Lightricks/LTX-2" },
+    { "title": "How this app prompts Flux and LTX", "url": "docs/prompting-flux-ltx.md" },
+    { "title": "Pack schema", "url": "docs/pack-schema.md" }
+  ]
+}
