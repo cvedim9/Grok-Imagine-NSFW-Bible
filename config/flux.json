@@ -1,0 +1,41 @@
+{
+  "edition": "flux",
+  "composer": "flux",
+  "manifestUrl": "packs/manifest.json",
+  "title": "Prompt Architect — Flux",
+  "versionLabel": "FLUX.1 / FLUX.2 · ComfyUI",
+  "footerDate": "Oct 28, 2026",
+  "footerNote": "Fictional adults only · not affiliated with Black Forest Labs",
+  "contentNote": "All characters are fictional adults. No real people's likenesses.",
+  "bibleVersion": "Flux",
+  "modeLabel": "",
+  "modePrefix": "",
+  "subjectPlaceholder": "What the subject is doing, as a sentence. Example: She sits on the edge of the bed and looks back over her shoulder.",
+  "cameraPlaceholder": "Framing, lens, and angle. Example: Medium shot, eye level, 50mm lens, subject on the left third.",
+  "sequencePlaceholder": "The action shared by every still. Each still adds its own beat and repeats the character sheet.",
+  "editionNav": [
+    { "id": "flux", "label": "Flux", "href": "index.html" },
+    { "id": "ltx", "label": "LTX", "href": "index-ltx.html" },
+    { "id": "nsfw", "label": "NSFW", "href": "index-nsfw.html" },
+    { "id": "r-rated", "label": "R-Rated", "href": "index-r.html" }
+  ],
+  "sequenceNotes": [
+    { "title": "Same person", "text": "The identity line is copied into every still without rewriting it." },
+    { "title": "One beat each", "text": "Establish, closer, crest, and after are four separate images, not a cut list inside one prompt." },
+    { "title": "Sentences", "text": "Each still is prose: subject, setting, camera, lighting, then style." }
+  ],
+  "principles": [
+    { "title": "Subject first", "text": "The identity line and the action lead. Setting, camera, lighting, and style follow." },
+    { "title": "Sentences", "text": "Write the way you would describe a photograph. Skip quality-tag piles and 8K spam." },
+    { "title": "Character sheet", "text": "Face, body, hair, wardrobe, setting, and lighting are inserted verbatim on every still." },
+    { "title": "Negatives", "text": "Leave the negative empty unless the workflow really uses CFG above 1. At CFG 1 it is ignored." },
+    { "title": "People", "text": "Fictional adults only. Do not describe a real person's likeness." }
+  ],
+  "sources": [
+    { "title": "FLUX.2 prompting guide (Black Forest Labs)", "url": "https://docs.bfl.ai/guides/prompting_guide_flux2" },
+    { "title": "FLUX prompting overview", "url": "https://docs.bfl.ai/guides/prompting_summary" },
+    { "title": "ComfyUI Flux support note (CFG 1, FluxGuidance)", "url": "https://blog.comfy.org/p/august-2024-flux-support-new-frontend-for-loops-and-more" },
+    { "title": "How this app prompts Flux and LTX", "url": "docs/prompting-flux-ltx.md" },
+    { "title": "Pack schema", "url": "docs/pack-schema.md" }
+  ]
+}

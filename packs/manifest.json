@@ -1,0 +1,25 @@
+{
+  "packs": [
+    {
+      "id": "flux-starter",
+      "file": "packs/flux-starter.json",
+      "edition": "flux",
+      "label": "Flux starter",
+      "enabled": true
+    },
+    {
+      "id": "ltx-starter",
+      "file": "packs/ltx-starter.json",
+      "edition": "ltx",
+      "label": "LTX starter",
+      "enabled": true
+    },
+    {
+      "id": "my-pack-example",
+      "file": "packs/my-pack.example.json",
+      "edition": "flux",
+      "label": "My pack example",
+      "enabled": false
+    }
+  ]
+}

@@ -21,19 +21,27 @@ Static **React 18** prompt architect for Grok Imagine NSFW and R-rated editions.
 
 | Path | Purpose |
 |------|---------|
-| `index.html` | NSFW entry → loads `config/nsfw.json` |
+| `index.html` / `index-flux.html` | Flux entry → loads `config/flux.json` (default) |
+| `index-ltx.html` | LTX entry → loads `config/ltx.json` |
+| `index-nsfw.html` | NSFW entry → loads `config/nsfw.json` |
 | `index-r.html` | R-rated entry → loads `config/r-rated.json` |
-| `index-nsfw.html` | Redirect to `index.html` |
 | `app.js` | App shell, state, tab routing |
 | `edition.js` | `resolveAppConfig()`, `EDITION_PRESETS` |
-| `prompt-engine.js` | `createPromptEngine()` — token expansion, sanitize, compose |
+| `edition-local.js` | Flux and LTX presets (styles, models, shot phases) |
+| `prompt-engine.js` | `createPromptEngine()` — Grok tokens plus Flux/LTX composers |
+| `packs.js` | Manifest loader, character copy, scene defaults |
+| `packs/manifest.json` | Lists pack files the My Packs UI can load |
+| `packs/flux-starter.json` | Flux starter templates |
+| `packs/ltx-starter.json` | LTX starter templates |
+| `docs/prompting-flux-ltx.md` | Why the Flux and LTX prompt shapes look like they do |
+| `docs/pack-schema.md` | How to add styles, characters, and templates |
 | `icons.js` | Inline SVG icon components |
 | `ui-shared.js` | `GlobalConfig`, `AspectRatioPicker` |
 | `ui-builder-tab.js` | Builder tab |
 | `ui-sequence-tab.js` | Sequence tab |
 | `ui-logger-tab.js` | Logger tab |
 | `ui-resources-tab.js` | Resources tab |
-| `master-pack-full.json` | **237** NSFW templates (source of truth) |
+| `master-pack-full.json` | **231** public NSFW templates (source of truth) |
 | `master-pack-r-rated.json` | **102** R-rated templates (derived) |
 | `master-pack-summary.md` | Human-readable pack index |
 | `scripts/pack_lib.py` | Shared `extract_subject`, `build_builder_fields` |
@@ -44,7 +52,7 @@ Static **React 18** prompt architect for Grok Imagine NSFW and R-rated editions.
 ### Script load order (in HTML)
 
 ```
-icons.js → edition.js → prompt-engine.js → ui-shared.js → ui-*-tab.js → app.js
+edition-local.js → edition.js → prompt-engine.js → packs.js → icons.js → ui-shared.js → ui-*-tab.js → app.js
 ```
 
 ## Common commands
@@ -79,7 +87,7 @@ python3 scripts/build_r_rated_pack.py
 2. Run `python3 scripts/build_nsfw_pack.py` to refresh `builder` blocks.
 3. Run `python3 scripts/build_r_rated_pack.py` if R-rated edition should pick up changes.
 4. Update `master-pack-summary.md` if adding new ranges or highlights.
-5. Run `./scripts/smoke_test.sh` — expects **237** NSFW and **102** R-rated prompts.
+5. Run `./scripts/smoke_test.sh` — expects **231** public NSFW, **102** R-rated, and the Flux/LTX starter packs (15–25 each).
 
 ### Adding a new edition
 

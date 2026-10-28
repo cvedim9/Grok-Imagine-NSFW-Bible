@@ -1,0 +1,42 @@
+{
+  "id": "my-pack-example",
+  "edition": "flux",
+  "label": "My pack example",
+  "styles": [
+    {
+      "id": "notebook",
+      "label": "Notebook sketch",
+      "prompt": "Drawn as a charcoal sketch in a bound notebook, with the paper grain visible."
+    }
+  ],
+  "boosters": [],
+  "characters": [
+    {
+      "id": "ada",
+      "name": "Ada Morin",
+      "face": "round face, dark eyes, a mole beside the mouth",
+      "body": "adult woman in her thirties, soft build",
+      "hair": "black hair in a loose knot",
+      "wardrobe": "an undone white shirt",
+      "setting": "a sunlit work table with loose paper",
+      "lighting": "daylight from a side window"
+    }
+  ],
+  "prompts": [
+    {
+      "number": 1,
+      "name": "Shirt at the table",
+      "type": "image",
+      "summary": "Ada at a work table, shirt undone, side window.",
+      "prompt": "Ada at a work table, shirt undone, side window.",
+      "character_id": "ada",
+      "builder": {
+        "style_id": "notebook",
+        "boosters": [],
+        "subject": "She leans on the table and looks up from the paper.",
+        "camera": "Medium shot from slightly above, 35mm lens.",
+        "audio": ""
+      }
+    }
+  ]
+}

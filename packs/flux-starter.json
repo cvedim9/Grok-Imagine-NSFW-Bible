@@ -1,0 +1,466 @@
+{
+  "id": "flux-starter",
+  "edition": "flux",
+  "label": "Flux starter",
+  "styles": [
+    {
+      "id": "film-portrait",
+      "label": "35mm portrait",
+      "prompt": "Shot on 35mm film with natural color and fine grain."
+    },
+    {
+      "id": "cinematic-still",
+      "label": "Cinematic still",
+      "prompt": "A cinematic still with anamorphic character and a restrained color grade."
+    },
+    {
+      "id": "oil-painting",
+      "label": "Oil painting",
+      "prompt": "Painted in oil on linen, with visible brush texture."
+    },
+    {
+      "id": "anime-illustration",
+      "label": "Anime illustration",
+      "prompt": "A detailed anime illustration with clean linework and soft airbrushed color."
+    },
+    {
+      "id": "fashion-editorial",
+      "label": "Fashion editorial",
+      "prompt": "A fashion editorial photograph with controlled studio color."
+    },
+    {
+      "id": "dark-fantasy",
+      "label": "Dark fantasy",
+      "prompt": "A dark fantasy illustration in ink and muted gold."
+    }
+  ],
+  "boosters": [
+    {
+      "id": "rim-light",
+      "label": "Rim light",
+      "prompt": "A thin rim light separates the subject from the background."
+    },
+    {
+      "id": "shallow-dof",
+      "label": "Shallow focus",
+      "prompt": "Focus stays on the subject and the background falls off."
+    },
+    {
+      "id": "volumetric",
+      "label": "Volumetric light",
+      "prompt": "Volumetric light is visible in the air."
+    },
+    {
+      "id": "neon-practicals",
+      "label": "Neon practicals",
+      "prompt": "Saturated neon practicals light the background."
+    },
+    {
+      "id": "soft-warm",
+      "label": "Soft warm",
+      "prompt": "The light is soft, low contrast, and warm."
+    },
+    {
+      "id": "tactile",
+      "label": "Tactile detail",
+      "prompt": "Skin, fabric, and nearby surfaces read as tactile."
+    }
+  ],
+  "characters": [
+    {
+      "id": "mara",
+      "name": "Mara Voss",
+      "face": "oval face, faint freckles across the nose, grey-green eyes, straight brows",
+      "body": "adult woman in her thirties, tall and athletic",
+      "hair": "dark auburn hair in shoulder-length loose waves",
+      "wardrobe": "an open black silk robe",
+      "setting": "a bedroom with rumpled ivory sheets and one lit candle",
+      "lighting": "warm candlelight from camera left and deep shadow on the far wall"
+    },
+    {
+      "id": "ivo",
+      "name": "Ivo Hale",
+      "face": "long face, crow's feet, dark eyes, a break in one eyebrow",
+      "body": "adult man in his early forties, broad-shouldered and lean",
+      "hair": "short dark hair with silver at the temples",
+      "wardrobe": "an unbuttoned linen shirt and dark trousers",
+      "setting": "a night studio with a concrete floor and a tall north window",
+      "lighting": "cool window light from camera right and a small warm practical on the floor"
+    },
+    {
+      "id": "sera",
+      "name": "Sera Quinn",
+      "face": "heart-shaped face, dark brown eyes, a small scar through the left eyebrow",
+      "body": "adult woman in her late twenties, compact and strong",
+      "hair": "cropped black hair, slightly longer on top",
+      "wardrobe": "a black leather harness over bare skin",
+      "setting": "a high apartment with wet glass and a neon sign outside",
+      "lighting": "magenta and cyan practical light, with the rest of the room falling dark"
+    },
+    {
+      "id": "lenn",
+      "name": "Lenn Aelis",
+      "face": "narrow face, gold-flecked eyes, faint leaf-shaped marks at the temples",
+      "body": "an adult elf woman, long-limbed",
+      "hair": "long straight silver hair",
+      "wardrobe": "a forest-green drape knotted at one hip",
+      "setting": "a moonlit forest clearing with a low fire",
+      "lighting": "cool moonlight from above and a warm rim from the fire"
+    }
+  ],
+  "prompts": [
+    {
+      "number": 1,
+      "name": "Candle and shoulder",
+      "type": "image",
+      "summary": "Mara on the edge of the bed, looking back, candlelight.",
+      "prompt": "Mara on the edge of the bed, looking back, candlelight.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "film-portrait",
+        "boosters": [
+          "rim-light",
+          "shallow-dof"
+        ],
+        "subject": "She sits on the edge of the bed and looks back over her shoulder.",
+        "camera": "Medium shot, eye level, 50mm lens, her face and shoulder on the left third.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 2,
+      "name": "Rain on the glass",
+      "type": "image",
+      "summary": "Mara at a rain-streaked window, palm on the glass.",
+      "prompt": "Mara at a rain-streaked window, palm on the glass.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "cinematic-still",
+        "boosters": [
+          "soft-warm"
+        ],
+        "subject": "She stands at a tall window in the rain and rests her forehead against the glass, one palm beside her face.",
+        "camera": "Three-quarter view, 35mm lens, the window frame dividing the background.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 3,
+      "name": "Morning stretch",
+      "type": "image",
+      "summary": "Mara stretched across the sheets, robe at her waist.",
+      "prompt": "Mara stretched across the sheets, robe at her waist.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "film-portrait",
+        "boosters": [
+          "tactile",
+          "soft-warm"
+        ],
+        "subject": "She stretches across the sheets on her stomach, chin on her folded arms, the robe fallen to her waist.",
+        "camera": "Low angle along the bed, 85mm lens, focus on her face.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 4,
+      "name": "North-light studio",
+      "type": "image",
+      "summary": "Ivo full length in the studio, shirt open.",
+      "prompt": "Ivo full length in the studio, shirt open.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "fashion-editorial",
+        "boosters": [
+          "tactile"
+        ],
+        "subject": "He stands with his weight on one hip, shirt open, looking just past the camera.",
+        "camera": "Full-length frame, eye level, 85mm lens, space above his head.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 5,
+      "name": "Midnight kitchen",
+      "type": "image",
+      "summary": "Ivo at a dark kitchen counter, glass in hand.",
+      "prompt": "Ivo at a dark kitchen counter, glass in hand.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "film-portrait",
+        "boosters": [
+          "rim-light"
+        ],
+        "subject": "He leans against the counter with a glass in one hand, shirt unbuttoned, the rest of the room dark.",
+        "camera": "Medium shot from across the counter, 35mm lens.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 6,
+      "name": "Neon doorway",
+      "type": "image",
+      "summary": "Sera in a doorway, harness catching neon.",
+      "prompt": "Sera in a doorway, harness catching neon.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "cinematic-still",
+        "boosters": [
+          "neon-practicals",
+          "rim-light"
+        ],
+        "subject": "She stands in the doorway, one hand on the frame, the harness catching the colored light.",
+        "camera": "Full shot, slight low angle, 35mm lens, the sign behind her.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 7,
+      "name": "Mirror and oil",
+      "type": "image",
+      "summary": "Sera at a mirror, oil on her collarbone.",
+      "prompt": "Sera at a mirror, oil on her collarbone.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "fashion-editorial",
+        "boosters": [
+          "tactile",
+          "shallow-dof"
+        ],
+        "subject": "She faces a mirror and works oil across her collarbone, eyes on her own reflection.",
+        "camera": "The frame holds both her back and the reflection, 50mm lens.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 8,
+      "name": "Reclining study",
+      "type": "image",
+      "summary": "Mara reclining on a dark sofa, painted in oil.",
+      "prompt": "Mara reclining on a dark sofa, painted in oil.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "oil-painting",
+        "boosters": [
+          "soft-warm"
+        ],
+        "subject": "She reclines on a dark sofa, one knee raised, looking toward the easel.",
+        "camera": "A classical three-quarter reclining composition, as if seen from a studio easel.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 9,
+      "name": "Balcony wind",
+      "type": "image",
+      "summary": "Sera on a high balcony at night, robe in the wind.",
+      "prompt": "Sera on a high balcony at night, robe in the wind.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "cinematic-still",
+        "boosters": [
+          "rim-light",
+          "volumetric"
+        ],
+        "subject": "She steps onto a high balcony at night and lets the wind take the edge of her robe.",
+        "camera": "Wide shot from inside the room, 24mm lens, city lights far below.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 10,
+      "name": "Library lamp",
+      "type": "image",
+      "summary": "Ivo in a deep chair under a single green lamp.",
+      "prompt": "Ivo in a deep chair under a single green lamp.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "dark-fantasy",
+        "boosters": [
+          "volumetric",
+          "shallow-dof"
+        ],
+        "subject": "He sits in a deep chair under a green lamp, the book closed, shirt open at the throat.",
+        "camera": "Medium close-up, 85mm lens, the lamp as the only practical.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 11,
+      "name": "Tent lantern",
+      "type": "image",
+      "summary": "Mara kneeling in a small tent, lantern light.",
+      "prompt": "Mara kneeling in a small tent, lantern light.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "film-portrait",
+        "boosters": [
+          "soft-warm",
+          "tactile"
+        ],
+        "subject": "She kneels in a small tent and turns toward the lantern, robe loose, canvas close around her.",
+        "camera": "Tight interior frame, 35mm lens, the lantern at the edge of the frame.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 12,
+      "name": "Last light on the shore",
+      "type": "image",
+      "summary": "Sera walking out of the surf at dusk.",
+      "prompt": "Sera walking out of the surf at dusk.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "cinematic-still",
+        "boosters": [
+          "rim-light",
+          "soft-warm"
+        ],
+        "subject": "She walks out of the surf at dusk, water at her thighs, looking back toward the horizon.",
+        "camera": "Long-lens compression, 135mm, horizon line low in the frame.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 13,
+      "name": "Clearing fire",
+      "type": "image",
+      "summary": "Lenn in a moonlit clearing, hand over a low fire.",
+      "prompt": "Lenn in a moonlit clearing, hand over a low fire.",
+      "character_id": "lenn",
+      "builder": {
+        "style_id": "dark-fantasy",
+        "boosters": [
+          "volumetric",
+          "rim-light"
+        ],
+        "subject": "She stands in the clearing with one hand extended over the low fire, the drape shifting in the heat.",
+        "camera": "Wide environmental portrait, 35mm lens, the fire in the lower third.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 14,
+      "name": "Throat and candle",
+      "type": "image",
+      "summary": "Mara and her adult partner, a candle, his mouth at her throat.",
+      "prompt": "Mara and her adult partner, a candle, his mouth at her throat.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "oil-painting",
+        "boosters": [
+          "rim-light"
+        ],
+        "subject": "She tips her head as her adult partner's mouth rests at her throat, both of them lit by the single candle.",
+        "camera": "Close portrait, 85mm lens, faces and throat filling the frame.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 15,
+      "name": "Foreheads together",
+      "type": "image",
+      "summary": "Mara in her adult partner's lap, foreheads touching.",
+      "prompt": "Mara in her adult partner's lap, foreheads touching.",
+      "character_id": "mara",
+      "builder": {
+        "style_id": "anime-illustration",
+        "boosters": [
+          "soft-warm"
+        ],
+        "subject": "She sits in her adult partner's lap, foreheads touching, knees folded around his hips.",
+        "camera": "Straight-on medium shot, centered, 50mm lens.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 16,
+      "name": "After the bath",
+      "type": "image",
+      "summary": "Sera by a window, towel low on her hips.",
+      "prompt": "Sera by a window, towel low on her hips.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "film-portrait",
+        "boosters": [
+          "tactile",
+          "shallow-dof"
+        ],
+        "subject": "She stands by a window with a towel gathered low on her hips, drying her hair with one hand.",
+        "camera": "Three-quarter length, window light from camera left, 50mm lens.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 17,
+      "name": "Alley sign",
+      "type": "image",
+      "summary": "Sera under a flickering sign, rain on the pavement.",
+      "prompt": "Sera under a flickering sign, rain on the pavement.",
+      "character_id": "sera",
+      "builder": {
+        "style_id": "cinematic-still",
+        "boosters": [
+          "neon-practicals",
+          "volumetric"
+        ],
+        "subject": "She pauses under a flickering sign and lights a cigarette, shoulders bare, rain on the pavement.",
+        "camera": "Medium full shot, eye level, 35mm lens, the sign above her.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 18,
+      "name": "Sheets and side light",
+      "type": "image",
+      "summary": "Ivo on his back in white sheets, one arm over his head.",
+      "prompt": "Ivo on his back in white sheets, one arm over his head.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "film-portrait",
+        "boosters": [
+          "tactile",
+          "shallow-dof"
+        ],
+        "subject": "He lies on his back in white sheets, one arm over his head, looking at someone just outside the frame.",
+        "camera": "Overhead three-quarter view, 50mm lens, his body on the diagonal.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 19,
+      "name": "Hands around a cup",
+      "type": "image",
+      "summary": "Ivo on a stool, both hands around a cup.",
+      "prompt": "Ivo on a stool, both hands around a cup.",
+      "character_id": "ivo",
+      "builder": {
+        "style_id": "film-portrait",
+        "boosters": [
+          "tactile"
+        ],
+        "subject": "He sits on a stool and warms both hands around a cup, shirt open, eyes lowered.",
+        "camera": "Close medium shot, 50mm lens, hands and face both sharp.",
+        "audio": ""
+      }
+    },
+    {
+      "number": 20,
+      "name": "Cushions",
+      "type": "image",
+      "summary": "Lenn reclining on dark cushions, looking up.",
+      "prompt": "Lenn reclining on dark cushions, looking up.",
+      "character_id": "lenn",
+      "builder": {
+        "style_id": "anime-illustration",
+        "boosters": [
+          "soft-warm",
+          "rim-light"
+        ],
+        "subject": "She reclines on a pile of dark cushions, one arm over her head, looking up at her adult partner.",
+        "camera": "Slight high angle, 35mm lens, her body on the diagonal of the frame.",
+        "audio": ""
+      }
+    }
+  ]
+}

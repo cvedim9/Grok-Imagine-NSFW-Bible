@@ -7,6 +7,12 @@
   "modePrefix": "Mature mode",
   "bibleVersion": "R-Rated v1.0",
   "footerDate": "Jun 23, 2026",
+  "editionNav": [
+    { "id": "flux", "label": "Flux", "href": "index.html" },
+    { "id": "ltx", "label": "LTX", "href": "index-ltx.html" },
+    { "id": "nsfw", "label": "NSFW", "href": "index-nsfw.html" },
+    { "id": "r-rated", "label": "R-Rated", "href": "index-r.html" }
+  ],
   "alternateEdition": { "label": "Full NSFW Edition", "href": "index-nsfw.html" },
   "subjectPlaceholder": "Describe scene... (e.g. rain-streaked window kiss, slow embrace, intense eye contact)",
   "sequencePlaceholder": "Describe the core scene context (e.g. 'candlelit bedroom, slow dance embrace, intense eye contact'). This will be used as the anchor for all phases.",

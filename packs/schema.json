@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/prompt-architect/pack.schema.json",
+  "title": "Prompt architect pack",
+  "type": "object",
+  "required": ["id", "edition"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "edition": { "enum": ["flux", "ltx"] },
+    "label": { "type": "string" },
+    "styles": { "type": "array", "items": { "$ref": "#/$defs/clause" } },
+    "boosters": { "type": "array", "items": { "$ref": "#/$defs/clause" } },
+    "characters": { "type": "array", "items": { "$ref": "#/$defs/character" } },
+    "prompts": { "type": "array", "items": { "$ref": "#/$defs/template" } }
+  },
+  "$defs": {
+    "clause": {
+      "type": "object",
+      "required": ["id", "label", "prompt"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "prompt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A sentence in the model's voice. Not a quality-tag list."
+        }
+      }
+    },
+    "character": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "face": { "type": "string" },
+        "body": { "type": "string" },
+        "hair": { "type": "string" },
+        "wardrobe": { "type": "string" },
+        "setting": { "type": "string" },
+        "lighting": { "type": "string" }
+      }
+    },
+    "template": {
+      "type": "object",
+      "required": ["name", "builder"],
+      "additionalProperties": false,
+      "properties": {
+        "number": { "type": "integer" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "summary": { "type": "string" },
+        "prompt": { "type": "string" },
+        "character_id": { "type": "string" },
+        "character": { "$ref": "#/$defs/character" },
+        "builder": {
+          "type": "object",
+          "required": ["subject"],
+          "additionalProperties": false,
+          "properties": {
+            "style_id": { "type": "string" },
+            "boosters": { "type": "array", "items": { "type": "string" } },
+            "subject": { "type": "string" },
+            "camera": { "type": "string" },
+            "audio": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

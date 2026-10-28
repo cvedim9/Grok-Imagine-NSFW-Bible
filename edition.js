@@ -25,6 +25,8 @@ const VOICE_TYPES = [
 
 const EDITION_PRESETS = {
     nsfw: {
+        composer: 'grok',
+        logStorageKey: 'grok_logs',
         ethicalPrefix: 'consensual fictional 18+ adults only, positive mutual pleasure, artistic erotica masterpiece, no real people/celebrities/deepfakes/CSAM, no harm/coercion/non-consensual/minors/underage, safewords/check-ins/aftercare always emphasized',
         baseAudioBlock: 'synced expressive moans/gasps/breathing rising perfectly with rhythm and hip velocity, crescendo at peak, gentle post-climax breathing fade, immersive soundtrack sync. Custom voice:',
         continuityLock: 'Seamless continuation from exact last frame (preserve identical nude bodies, facial features, body proportions, skin tone oil sheen): maintain consistent anime style, no photoreal bleed, ultra-detailed anime aesthetic throughout:',
@@ -54,6 +56,8 @@ const EDITION_PRESETS = {
         ],
     },
     'r-rated': {
+        composer: 'grok',
+        logStorageKey: 'grok_logs',
         ethicalPrefix: 'consensual fictional adults 18+, artistic R-rated cinematic intimacy, emotional authenticity, positive mutual desire, no real people/celebrities/deepfakes, no harm/coercion/non-consensual/minors, safewords and aftercare emphasized, Hollywood mature romance framing',
         baseAudioBlock: 'synced natural breath, soft sighs, and emotional vocal texture rising with intimacy, gentle score swell at peak, tender post-scene breathing fade. Custom voice:',
         continuityLock: 'Seamless continuation from exact last frame (preserve identical characters, wardrobe state, facial features, body proportions, lighting grade): maintain consistent cinematic anime style throughout:',
@@ -74,6 +78,10 @@ const EDITION_PRESETS = {
     },
 };
 
+if (typeof LOCAL_EDITION_PRESETS !== 'undefined') {
+    Object.assign(EDITION_PRESETS, LOCAL_EDITION_PRESETS);
+}
+
 function resolveAppConfig(config) {
     if (!config || !config.edition) {
         throw new Error('GROK_ARCHITECT_CONFIG.edition is required');
@@ -82,11 +90,17 @@ function resolveAppConfig(config) {
     if (!preset) {
         throw new Error(`Unknown edition: ${config.edition}`);
     }
-    const activeArtStyles = ART_STYLES.filter((s) => !preset.excludedStyleIds.includes(s.id));
-    const sources = [
-        { title: 'GitHub Repository (FineComputer14451)', url: 'https://github.com/FineComputer14451/Grok-Imagine-NSFW-Bible', iconKey: 'github' },
-        ...preset.extraSources,
-        { title: 'Grok: Imagine - NSFW Bible v4.4', url: 'https://www.reddit.com/r/grok/comments/1qukk9t/grok_imagine_nsfw_bible_v42_unlock_epic_erotica/' },
-    ];
-    return { ...preset, ...config, activeArtStyles, sources, artStyles: ART_STYLES, styleBoosters: STYLE_BOOSTERS, voiceTypes: VOICE_TYPES };
+    const artStyles = preset.artStyles && preset.artStyles.length ? preset.artStyles : ART_STYLES;
+    const styleBoosters = preset.styleBoosters && preset.styleBoosters.length ? preset.styleBoosters : STYLE_BOOSTERS;
+    const voiceTypes = Object.prototype.hasOwnProperty.call(preset, 'voiceTypes') ? preset.voiceTypes : VOICE_TYPES;
+    const excluded = preset.excludedStyleIds || [];
+    const activeArtStyles = artStyles.filter((s) => !excluded.includes(s.id));
+    const sources = Array.isArray(config.sources) && config.sources.length
+        ? config.sources
+        : [
+            { title: 'GitHub Repository (FineComputer14451)', url: 'https://github.com/FineComputer14451/Grok-Imagine-NSFW-Bible', iconKey: 'github' },
+            ...(preset.extraSources || []),
+            { title: 'Grok: Imagine - NSFW Bible v4.4', url: 'https://www.reddit.com/r/grok/comments/1qukk9t/grok_imagine_nsfw_bible_v42_unlock_epic_erotica/' },
+        ];
+    return { ...preset, ...config, artStyles, styleBoosters, voiceTypes, activeArtStyles, sources };
 }
